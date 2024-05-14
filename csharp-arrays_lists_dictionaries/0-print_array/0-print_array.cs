@@ -14,7 +14,11 @@ class Array
             int[] myArray = new int[size];
             for (int i = 0; i<size; i++) {
                 myArray[i] = i;
-                Console.Write(myArray[i] + " ");
+                if (i == size - 1) {
+                    Console.Write(myArray[i]);
+                } else {
+                    Console.Write(myArray[i] + " ");
+                }
             }
             Console.WriteLine();
             return myArray;
