@@ -9,7 +9,7 @@ class Array
             return null;
         } else if (size == 0){
             Console.WriteLine();
-            return [];
+            return new int [0];
         } else {
             int[] myArray = new int[size];
             for (int i = 0; i<size; i++) {
