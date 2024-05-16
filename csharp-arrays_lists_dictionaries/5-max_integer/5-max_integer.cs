@@ -9,7 +9,7 @@ class List
             Console.WriteLine("List is empty");
             return -1;
         }
-        int Max = 0;
+        int Max = myList[0];
         foreach(int num in myList) 
         {
             if (num > Max) {
