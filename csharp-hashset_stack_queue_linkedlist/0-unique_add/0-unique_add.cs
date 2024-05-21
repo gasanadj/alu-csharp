@@ -2,7 +2,7 @@
 {
     public static int Sum(List<int> myList)
     {
-        List<int> Unique = [];
+        List<int> Unique = new List<int>();
         foreach (int element in myList)
         {
             if (Unique.Contains(element))
