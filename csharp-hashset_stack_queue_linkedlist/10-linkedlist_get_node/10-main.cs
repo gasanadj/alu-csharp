@@ -16,6 +16,6 @@ class Program
         myLList.AddLast(37);
         myLList.AddLast(-8);
 
-        Console.WriteLine(LList.GetNode(myLList, 10));
+        Console.WriteLine(LList.GetNode(myLList, 5));
     }
 }
