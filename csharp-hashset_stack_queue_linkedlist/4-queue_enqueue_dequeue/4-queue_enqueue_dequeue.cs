@@ -12,7 +12,7 @@
         if (aQueue.Contains(search)) {
             Console.WriteLine($"Queue contains \"{search}\": True");
         }else{
-            Console.WriteLine($"Queue contains \"{search}\": True");
+            Console.WriteLine($"Queue contains \"{search}\": False");
         }
 
         while(aQueue.Contains(search)) {
