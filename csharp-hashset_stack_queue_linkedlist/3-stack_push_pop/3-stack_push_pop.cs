@@ -12,7 +12,7 @@
         if (Contains) {
             Console.WriteLine($"Stack contains \"{search}\": True");
         } else {
-            Console.WriteLine($"Stack contains {search}: False");
+            Console.WriteLine($"Stack contains \"{search}\": False");
         }
         while (aStack.Contains(search)) {
             aStack.Pop();
