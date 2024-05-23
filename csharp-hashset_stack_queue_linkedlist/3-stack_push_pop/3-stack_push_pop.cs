@@ -10,7 +10,7 @@
         }
         bool Contains = aStack.Contains(search);
         if (Contains) {
-            Console.WriteLine($"Stack contains {search}: True");
+            Console.WriteLine($"Stack contains \"{search}\": True");
         } else {
             Console.WriteLine($"Stack contains {search}: False");
         }
