@@ -4,7 +4,7 @@
     {
         Console.WriteLine($"Number of items: {aQueue.Count}");
         if (aQueue.Count > 0) {
-            Console.WriteLine($"First item: ${aQueue.Peek()}");
+            Console.WriteLine($"First item: {aQueue.Peek()}");
         } else {
             Console.WriteLine("Queue is empty");
         }
