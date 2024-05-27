@@ -3,10 +3,9 @@
     public static LinkedListNode<int> Insert(LinkedList<int> myLList, int n)
     {
         LinkedListNode<int> current = myLList.First;
-        // if (n < myLList.First.Value) {
-        //     myLList.AddBefore(myLList.First, n);
-        // }
-        while (current.Next != null) 
+        if (myLList.Count > 1) 
+        {
+            while (current.Next != null) 
         {
                 if (current.Value < n)
                 {
@@ -16,9 +15,13 @@
                     break;
                 }
         }
-        if (n > myLList.Last.Value){
+        }else if (n > myLList.Last.Value){
             myLList.AddAfter(myLList.Last, n);
+        }else {
+            myLList.AddBefore(myLList.Last, n);
         }
+
+
         return myLList.Find(n);
     }
 
