@@ -15,10 +15,13 @@
                     break;
                 }
         }
-        }else if (n > myLList.Last.Value){
+        }
+        if (n > myLList.Last.Value){
             myLList.AddAfter(myLList.Last, n);
-        }else {
-            myLList.AddBefore(myLList.Last, n);
+        }
+        if (myLList.Count <= 1 && n < myLList.First.Value )
+        {
+            myLList.AddBefore(myLList.First, n);
         }
 
 
