@@ -3,12 +3,12 @@
     public static LinkedListNode<int> Insert(LinkedList<int> myLList, int n)
     {
         LinkedListNode<int> current = myLList.First;
-        if (n < myLList.First.Value) {
-            myLList.AddBefore(myLList.First, n);
-        }
+        // if (n < myLList.First.Value) {
+        //     myLList.AddBefore(myLList.First, n);
+        // }
         while (current.Next != null) 
         {
-                if (current.Value <= n)
+                if (current.Value < n)
                 {
                     current = current.Next;
                 }else {
