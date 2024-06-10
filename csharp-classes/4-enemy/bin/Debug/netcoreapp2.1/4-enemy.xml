@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>4-enemy</name>
+    </assembly>
+    <members>
+        <member name="T:Enemies.Zombie">
+            <summary>
+            This is a Class representation of a zombie
+            </summary>
+        </member>
+        <member name="M:Enemies.Zombie.#ctor">
+            <summary>
+            This is a constructor that sets the health to 0
+            </summary>
+        </member>
+        <member name="M:Enemies.Zombie.#ctor(System.Int32)">
+            <summary>
+             This is a paramaterized constructor which gives health a value
+             </summary>
+        </member>
+        <member name="M:Enemies.Zombie.GetHealth">
+            <summary>
+             This is a method which returns the health of a zombie
+             </summary>
+        </member>
+    </members>
+</doc>
