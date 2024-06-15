@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "kW9ycabXMg6kyiizjWt9BEtt+uMQONzCfJm/ugllEYzZ7061bo3w/RKiLRCeW5sslnQHqN4BZTXPha2HKX1PbQ==",
+  "success": true,
+  "projectFilePath": "/Users/lupin/Desktop/csharp-tdd/1-divide/MyMath/MyMath.csproj",
+  "expectedPackageFiles": [
+    "/Users/lupin/.nuget/packages/microsoft.netcore.app.ref/7.0.18/microsoft.netcore.app.ref.7.0.18.nupkg.sha512",
+    "/Users/lupin/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.18/microsoft.aspnetcore.app.ref.7.0.18.nupkg.sha512"
+  ],
+  "logs": []
+}

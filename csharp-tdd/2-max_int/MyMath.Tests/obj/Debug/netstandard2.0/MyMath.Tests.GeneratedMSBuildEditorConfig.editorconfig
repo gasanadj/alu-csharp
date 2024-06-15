@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = MyMath.Tests
+build_property.ProjectDir = /Users/lupin/Desktop/0-add/MyMath.Tests/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

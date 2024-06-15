@@ -1,0 +1,5 @@
+/Users/lupin/Desktop/0-add/MyMath/obj/Debug/netstandard2.0/MyMath.csproj.AssemblyReference.cache
+/Users/lupin/Desktop/0-add/MyMath/obj/Debug/netstandard2.0/MyMath.GeneratedMSBuildEditorConfig.editorconfig
+/Users/lupin/Desktop/0-add/MyMath/obj/Debug/netstandard2.0/MyMath.AssemblyInfoInputs.cache
+/Users/lupin/Desktop/0-add/MyMath/obj/Debug/netstandard2.0/MyMath.AssemblyInfo.cs
+/Users/lupin/Desktop/0-add/MyMath/obj/Debug/netstandard2.0/MyMath.csproj.CoreCompileInputs.cache

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "mQj1saYqjr6L7E49/t+uNI1fdCbKFJul+Xv7WIV8p+2Qc4kMvF8a/QKdNxT8wmA+/63+Ec/n7jYu60jCe00ubQ==",
+  "success": true,
+  "projectFilePath": "/Users/lupin/Desktop/csharp-tdd/4-unique/Text/Text.csproj",
+  "expectedPackageFiles": [
+    "/Users/lupin/.nuget/packages/microsoft.netcore.app.ref/7.0.18/microsoft.netcore.app.ref.7.0.18.nupkg.sha512",
+    "/Users/lupin/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.18/microsoft.aspnetcore.app.ref.7.0.18.nupkg.sha512"
+  ],
+  "logs": []
+}

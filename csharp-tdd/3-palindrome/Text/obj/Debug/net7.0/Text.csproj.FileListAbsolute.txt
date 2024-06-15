@@ -1,0 +1,12 @@
+/Users/lupin/Desktop/csharp-tdd/3-palindrome/Text/bin/Debug/net7.0/Text.xml
+/Users/lupin/Desktop/csharp-tdd/3-palindrome/Text/bin/Debug/net7.0/Text.deps.json
+/Users/lupin/Desktop/csharp-tdd/3-palindrome/Text/bin/Debug/net7.0/Text.dll
+/Users/lupin/Desktop/csharp-tdd/3-palindrome/Text/bin/Debug/net7.0/Text.pdb
+/Users/lupin/Desktop/csharp-tdd/3-palindrome/Text/obj/Debug/net7.0/Text.GeneratedMSBuildEditorConfig.editorconfig
+/Users/lupin/Desktop/csharp-tdd/3-palindrome/Text/obj/Debug/net7.0/Text.AssemblyInfoInputs.cache
+/Users/lupin/Desktop/csharp-tdd/3-palindrome/Text/obj/Debug/net7.0/Text.AssemblyInfo.cs
+/Users/lupin/Desktop/csharp-tdd/3-palindrome/Text/obj/Debug/net7.0/Text.csproj.CoreCompileInputs.cache
+/Users/lupin/Desktop/csharp-tdd/3-palindrome/Text/obj/Debug/net7.0/Text.dll
+/Users/lupin/Desktop/csharp-tdd/3-palindrome/Text/obj/Debug/net7.0/refint/Text.dll
+/Users/lupin/Desktop/csharp-tdd/3-palindrome/Text/obj/Debug/net7.0/Text.pdb
+/Users/lupin/Desktop/csharp-tdd/3-palindrome/Text/obj/Debug/net7.0/ref/Text.dll

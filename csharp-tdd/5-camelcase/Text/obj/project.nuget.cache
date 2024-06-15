@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "G1ey0MkSQojzoOdEcaip+XaSHaAFzZmmNtAKnnXVLvCdhxCdgfv/5w9xJ0JsynPwMyECuQoFD53sd8pCDOi50A==",
+  "success": true,
+  "projectFilePath": "/Users/lupin/Desktop/csharp-tdd/5-camelcase/Text/Text.csproj",
+  "expectedPackageFiles": [
+    "/Users/lupin/.nuget/packages/microsoft.netcore.app.ref/7.0.18/microsoft.netcore.app.ref.7.0.18.nupkg.sha512",
+    "/Users/lupin/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.18/microsoft.aspnetcore.app.ref.7.0.18.nupkg.sha512"
+  ],
+  "logs": []
+}

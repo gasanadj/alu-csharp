@@ -1,0 +1,12 @@
+/Users/lupin/Desktop/0-add/MyMath/bin/Debug/net7.0/MyMath.xml
+/Users/lupin/Desktop/0-add/MyMath/bin/Debug/net7.0/MyMath.deps.json
+/Users/lupin/Desktop/0-add/MyMath/bin/Debug/net7.0/MyMath.dll
+/Users/lupin/Desktop/0-add/MyMath/bin/Debug/net7.0/MyMath.pdb
+/Users/lupin/Desktop/0-add/MyMath/obj/Debug/net7.0/MyMath.GeneratedMSBuildEditorConfig.editorconfig
+/Users/lupin/Desktop/0-add/MyMath/obj/Debug/net7.0/MyMath.AssemblyInfoInputs.cache
+/Users/lupin/Desktop/0-add/MyMath/obj/Debug/net7.0/MyMath.AssemblyInfo.cs
+/Users/lupin/Desktop/0-add/MyMath/obj/Debug/net7.0/MyMath.csproj.CoreCompileInputs.cache
+/Users/lupin/Desktop/0-add/MyMath/obj/Debug/net7.0/MyMath.dll
+/Users/lupin/Desktop/0-add/MyMath/obj/Debug/net7.0/refint/MyMath.dll
+/Users/lupin/Desktop/0-add/MyMath/obj/Debug/net7.0/MyMath.pdb
+/Users/lupin/Desktop/0-add/MyMath/obj/Debug/net7.0/ref/MyMath.dll
