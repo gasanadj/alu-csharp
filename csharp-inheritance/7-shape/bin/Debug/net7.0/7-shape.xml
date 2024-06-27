@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>7-shape</name>
+    </assembly>
+    <members>
+        <member name="T:Shape">
+            <summary>
+            The Shape base class
+            </summary>
+        </member>
+        <member name="M:Shape.Area">
+            <summary>
+            Virtual Area Method
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Rectangle">
+            <summary>
+            Class Rectangle inhereting Shape
+            </summary>
+        </member>
+        <member name="P:Rectangle.Width">
+            <summary>
+            Setter for Width
+            </summary>
+        </member>
+        <member name="P:Rectangle.Height">
+            <summary>
+            Setter for Height
+            </summary>
+        </member>
+        <member name="M:Rectangle.Area">
+            <summary>
+            Overriding the Area method to print the area of a rectangle
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rectangle.ToString">
+            <summary>
+            Overriding the ToString() method
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

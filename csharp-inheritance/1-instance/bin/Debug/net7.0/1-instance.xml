@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>1-instance</name>
+    </assembly>
+    <members>
+        <member name="T:Obj">
+            <summary>
+            The object class
+            </summary>
+        </member>
+        <member name="M:Obj.IsInstanceOfArray(System.Object)">
+            <summary>
+            Method to check if an object is an instance of a class
+            </summary>
+            <param name="obj"></param>
+            <returns>True | False</returns>
+        </member>
+    </members>
+</doc>
