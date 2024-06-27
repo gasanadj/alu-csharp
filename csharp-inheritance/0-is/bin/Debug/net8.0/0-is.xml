@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>0-is</name>
+    </assembly>
+    <members>
+        <member name="T:Obj">
+            <summary>
+            The Obj Class
+            </summary>
+        </member>
+        <member name="M:Obj.IsOfTypeInt(System.Object)">
+            <summary>
+            Method to check if an object is of type int
+            </summary>
+            <param name="obj"></param>
+            <returns>True | False</returns>
+        </member>
+    </members>
+</doc>
