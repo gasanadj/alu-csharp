@@ -15,7 +15,7 @@ class Program
         Console.WriteLine("------------------");
 
         Square aSquare = new Square();
-        aSquare.Size = 12;
+        aSquare.Size = 0;
         Console.WriteLine("aSquare width: {0}", aSquare.Width);
         Console.WriteLine("aSquare height: {0}", aSquare.Height);
         Console.WriteLine("aSquare area: {0}", aSquare.Area());

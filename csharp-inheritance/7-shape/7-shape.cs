@@ -29,7 +29,7 @@ class Rectangle : Shape
         get { return width; }
         set
         {
-            if (value > 0)
+            if (value >= 0)
             {
                 width = value;
             }
@@ -48,7 +48,7 @@ class Rectangle : Shape
         get { return height; }
         set
         {
-            if (value > 0)
+            if (value >= 0)
             {
                 height = value;
             }
