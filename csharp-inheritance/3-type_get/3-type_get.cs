@@ -1,4 +1,6 @@
-﻿using System;
+﻿#pragma warning disable CS8618 // Disable warning about non-nullable field not being initialized
+
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 
@@ -28,3 +30,5 @@ public class Obj
         }
     }
 }
+
+#pragma warning restore CS8618 // Restore warning about non-nullable field not being initialized
