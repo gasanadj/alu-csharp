@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3-magnitude", "3-magnitude\3-magnitude.csproj", "{DB3D1FCB-7579-43CD-90D1-2C34127E49DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB3D1FCB-7579-43CD-90D1-2C34127E49DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB3D1FCB-7579-43CD-90D1-2C34127E49DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB3D1FCB-7579-43CD-90D1-2C34127E49DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB3D1FCB-7579-43CD-90D1-2C34127E49DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92C744A9-787C-4704-BBF7-56771E0446CC}
+	EndGlobalSection
+EndGlobal
