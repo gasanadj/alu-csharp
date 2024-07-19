@@ -28,7 +28,7 @@ class MatrixMath
             delta += matrix[0, 0] * (matrix[1, 1] * matrix[2, 2] - matrix[1, 2] * matrix[2, 1]);
             delta -= matrix[0, 1] * (matrix[1, 0] * matrix[2, 2] - matrix[1, 2] * matrix[2, 0]);
             delta += matrix[0, 2] * (matrix[1, 0] * matrix[2, 1] - matrix[1, 1] * matrix[2, 0]);
-            return delta;
+            return Math.Round(delta, 2);;
         }
 
         return -1;
