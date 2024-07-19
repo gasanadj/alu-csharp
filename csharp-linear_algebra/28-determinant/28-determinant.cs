@@ -9,7 +9,7 @@ class MatrixMath
     /// </summary>
     /// <param name="matrix"></param>
     /// <returns></returns>
- public static double delta(double[,] matrix)
+ public static double Determinant(double[,] matrix)
     {
         int rows = matrix.GetLength(0);
         int cols = matrix.GetLength(1);
