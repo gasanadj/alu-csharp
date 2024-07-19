@@ -5,18 +5,35 @@
 class MatrixMath
 {
     /// <summary>
-    /// Public method to perform rotation of a matrix.
+    /// Public method to perform Shear of a matrix
     /// </summary>
     /// <param name="matrix"></param>
-    /// <param name="angle"></param>
+    /// <param name="direction"></param>
+    /// <param name="factor"></param>
     /// <returns></returns>
-    public static double[,] Rotate2D(double[,] matrix, double angle){
-        double cos = Math.Cos(angle);
-        double sin = Math.Sin(angle);
-        var rotation = new double[2,2]{{cos, sin}, {-sin, cos}};
-        var res = new double[matrix.GetLength(0),matrix.GetLength(1)];
-        res = Multiply(matrix, rotation);
-        return res;
+public static double[,] Shear2D(double[,] matrix, char direction, double factor)
+    {
+        int rows = matrix.GetLength(0);
+        int cols = matrix.GetLength(1);
+        if (rows != 2 || cols != 2)
+        {
+            return new double[,] { { -1 } };
+        }
+
+        double[,] shearMatrix;
+        if (direction == 'x')
+        {
+            shearMatrix = new double[,] { { 1, factor }, { 0, 1 } };
+        }
+        else if (direction == 'y')
+        {
+            shearMatrix = new double[,] { { 1, 0 }, { factor, 1 } };
+        }
+        else
+        {
+            return new double[,] { { -1 } };
+        }
+        return Multiply(shearMatrix, matrix);
     }
 
 
