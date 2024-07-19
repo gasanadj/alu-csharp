@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "33-inverse_2D", "33-inverse_2D.csproj", "{4C65BE0B-CAF6-4082-BC3E-E17A27CD2129}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C65BE0B-CAF6-4082-BC3E-E17A27CD2129}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C65BE0B-CAF6-4082-BC3E-E17A27CD2129}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C65BE0B-CAF6-4082-BC3E-E17A27CD2129}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C65BE0B-CAF6-4082-BC3E-E17A27CD2129}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {196EAA74-7DB0-481A-8B84-9A7367C5C8AE}
+	EndGlobalSection
+EndGlobal
