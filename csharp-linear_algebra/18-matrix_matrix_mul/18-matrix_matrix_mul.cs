@@ -17,7 +17,7 @@ class MatrixMath
         int rows2 = matrix2.GetLength(0);
         int cols2 = matrix2.GetLength(1);
 
-        if (rows1 != cols2)
+        if (cols1 != rows2)
         {
             return new double[,] { { -1 } };
         }
