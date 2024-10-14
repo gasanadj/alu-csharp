@@ -1,95 +1,75 @@
-﻿using System;
-
-
-/// <summary>
-///public class queue
+﻿/// <summary>
+/// Generic class Queue
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public class Queue<T>  {
 
-
-/// <summary>
-/// class Node
-/// </summary>
-    public class Node{
-        /// <summary>
-        /// value of node
-        /// </summary>
-
-        public T? Value;
-
-        /// <summary>
-        /// reference to the next node in queue
-        /// </summary>
-        public Node? Next;
-
-        /// <summary>
-        /// initializes values
-        /// </summary>
-        /// <param name="value"></param>
-        public Node(T value){
-            Value = value;
-            Next = null;
-        }
-    }
-
+public class Queue<T>
+{
     /// <summary>
-    /// head node
+    /// Head of the Queue
     /// </summary>
-    protected Node? head;
+    public Node? head;
     /// <summary>
-    /// tail node
+    /// Tail of the Queue
     /// </summary>
-    protected Node? tail;
-    // counts the number of nodes
-    int count;
-
-/// <summary>
-/// queue method
-/// </summary>
-    public Queue()
+    public Node? tail;
+    /// <summary>
+    /// Count of the Nodes
+    /// </summary>
+    public int count;
+    /// <summary>
+    /// The Node class
+    /// </summary>
+    public class Node
     {
-        head = null;
-        tail = null;
-        count = 0;
-    }
-
-
-/// <summary>
-/// enqueue method
-/// </summary>
-/// <param name="value"></param>
-    public void Enqueue(T? value){
-
-        Node newNode = new Node(value!);
-    
-        if(head == null){
-            head = newNode;
-            tail = newNode;
-        }else{
-            tail!.Next = newNode;
-            tail = newNode;
+        /// <summary>
+        /// Value of a node
+        /// </summary>
+        public T? value = default;
+        /// <summary>
+        /// Next pointer of a node
+        /// </summary>
+        public Node? next = null;
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="v"></param>
+        public Node(T v) {
+            value = v;
+            next = null;
         }
-         count++;
+        
     }
-
-    
-    
-
-/// <summary>
-/// checktype method
-/// </summary>
-
-    public Type CheckType(){
+    /// <summary>
+    /// Method that returns the type of the Queue
+    /// </summary>
+    /// <returns></returns>
+    public Type CheckType()
+    {
         return typeof(T);
     }
 
-/// <summary>
-/// count method
-/// </summary>
+    /// <summary>
+    /// Method that adds an item to the queue
+    /// </summary>
+    /// <param name="value"></param>
+    public void Enqueue(T? value) {
+        Node newNode = new Node(value!);
+        if(head == null) {
+            head = newNode;
+            tail = newNode;
+        }else {
+            tail!.next = newNode;
+            tail = newNode;
+        }
+        count++;
+    }
+    /// <summary>
+    /// Method to count all the nodes of a queue
+    /// </summary>
+    /// <returns></returns>
 
-    public int Count(){
+    public int Count() {
         return count;
     }
-    
 }
