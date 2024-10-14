@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>5-concatenate</name>
+    </assembly>
+    <members>
+        <member name="T:Queue`1">
+            <summary>
+            Generic class Queue
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="F:Queue`1.head">
+            <summary>
+            Head of the Queue
+            </summary>
+        </member>
+        <member name="F:Queue`1.tail">
+            <summary>
+            Tail of the Queue
+            </summary>
+        </member>
+        <member name="F:Queue`1.count">
+            <summary>
+            Count of the Nodes
+            </summary>
+        </member>
+        <member name="T:Queue`1.Node">
+            <summary>
+            The Node class
+            </summary>
+        </member>
+        <member name="F:Queue`1.Node.value">
+            <summary>
+            Value of a node
+            </summary>
+        </member>
+        <member name="F:Queue`1.Node.next">
+            <summary>
+            Next pointer of a node
+            </summary>
+        </member>
+        <member name="M:Queue`1.Node.#ctor(`0)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="v"></param>
+        </member>
+        <member name="M:Queue`1.CheckType">
+            <summary>
+            Method that returns the type of the Queue
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Queue`1.Enqueue(`0)">
+            <summary>
+            Method that adds an item to the queue
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Queue`1.Dequeue">
+            <summary>
+            A method to remove the first element in the queue
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Queue`1.Peek">
+            <summary>
+            A method to return the first element in th queue
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Queue`1.Print">
+            <summary>
+            A method to Print the elements
+            </summary>
+        </member>
+        <member name="M:Queue`1.Concatenate">
+            <summary>
+            Method to concatenate the contents of a queue
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Queue`1.Count">
+            <summary>
+            Method to count all the nodes of a queue
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
