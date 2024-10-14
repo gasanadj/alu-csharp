@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/// <summary>
+/// Generic class Queue
+/// </summary>
+/// <typeparam name="T"></typeparam>
 
 public class Queue<T>
 {
@@ -15,11 +18,19 @@ public class Queue<T>
         }
         
     }
+    /// <summary>
+    /// Method that returns the type of the Queue
+    /// </summary>
+    /// <returns></returns>
     public Type CheckType()
     {
-        return typeof(Queue<T>);
+        return typeof(T);
     }
 
+    /// <summary>
+    /// Method that adds an item to the queue
+    /// </summary>
+    /// <param name="value"></param>
     public void Enqueue(T value) {
         Node newNode = new Node(value);
         if(head == null) {

@@ -6,6 +6,7 @@
     <RootNamespace>_1_enqueue</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <DocumentationFile>bin\$(Configuration)\netcoreapp2.1\$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>
