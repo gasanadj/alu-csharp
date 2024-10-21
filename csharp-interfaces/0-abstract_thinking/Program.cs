@@ -5,7 +5,7 @@ public abstract class Base {
     /// <summary>
     /// The public property name
     /// </summary>
-    public string? name;
+    public string ? name {get; set;}
 
     /// <summary>
     /// Override for the ToString()
@@ -13,7 +13,6 @@ public abstract class Base {
     /// <returns></returns>
     public override string ToString()
     {
-        Type type = name!.GetType();
-        return $"{name} is a {type}";
+        return $"{name} is a {this.GetType().Name}";
     }
 }
