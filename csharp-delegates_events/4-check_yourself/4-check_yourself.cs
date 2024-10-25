@@ -175,7 +175,7 @@ public class CurrentHPArgs : EventArgs {
     /// <summary>
     /// Current HP
     /// </summary>
-    public float currentHp;
+    public float currentHp {get;}
     /// <summary>
     /// Constructor function
     /// </summary>
