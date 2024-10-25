@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>0-universal_health</name>
+    </assembly>
+    <members>
+        <member name="T:Player">
+            <summary>
+            Player class
+            </summary>
+        </member>
+        <member name="P:Player.name">
+            <summary>
+            name property
+            </summary>
+        </member>
+        <member name="P:Player.maxHp">
+            <summary>
+            maxHp property
+            </summary>
+        </member>
+        <member name="P:Player.hp">
+            <summary>
+            hp property
+            </summary>
+        </member>
+        <member name="M:Player.#ctor(System.String,System.Single)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Player.PrintHealth">
+            <summary>
+            Method to Print the Health of the Player
+            </summary>
+        </member>
+    </members>
+</doc>
