@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>2-validation</name>
+    </assembly>
+    <members>
+        <member name="T:Player">
+            <summary>
+            Player class
+            </summary>
+        </member>
+        <member name="F:Player.name">
+            <summary>
+            name property
+            </summary>
+        </member>
+        <member name="F:Player.maxHp">
+            <summary>
+            maxHp property
+            </summary>
+        </member>
+        <member name="F:Player.hp">
+            <summary>
+            hp property
+            </summary>
+        </member>
+        <member name="M:Player.#ctor(System.String,System.Single)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Player.PrintHealth">
+            <summary>
+            Method to Print the Health of the Player
+            </summary>
+        </member>
+        <member name="T:Player.CalculateHealth">
+            <summary>
+            Delegate function
+            </summary>
+        </member>
+        <member name="M:Player.TakeDamage(System.Single)">
+            <summary>
+            Take Damage function
+            </summary>
+            <param name="damage"></param>
+        </member>
+        <member name="M:Player.HealDamage(System.Single)">
+            <summary>
+            Heal damage function
+            </summary>
+            <param name="heal"></param>
+        </member>
+        <member name="M:Player.ValidateHP(System.Single)">
+            <summary>
+            Method to validate HP
+            </summary>
+            <param name="newHp"></param>
+        </member>
+    </members>
+</doc>
