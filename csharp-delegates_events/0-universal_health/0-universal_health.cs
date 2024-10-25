@@ -7,15 +7,15 @@ public class Player {
     /// <summary>
     /// name property
     /// </summary>
-    public string? name {get; set;}
+    private string? name;
     /// <summary>
     /// maxHp property
     /// </summary>
-    public float? maxHp {get; set;}
+    private float? maxHp;
     /// <summary>
     /// hp property
     /// </summary>
-    public float? hp {get; set;}
+    private float? hp;
     /// <summary>
     /// Constructor
     /// </summary>
@@ -27,7 +27,7 @@ public class Player {
             this.maxHp = 100f;
             Console.WriteLine("maxHp must be greater than 0. maxHp set to 100f by default.");
         }
-        this.hp = maxHp;
+        hp = maxHp;
     }
     /// <summary>
     /// Method to Print the Health of the Player
