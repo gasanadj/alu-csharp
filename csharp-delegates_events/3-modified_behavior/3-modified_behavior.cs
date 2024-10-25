@@ -64,7 +64,7 @@ public class Player {
         }else {
             float newHp = hp + heal;
             ValidateHP(newHp);
-            Console.WriteLine($"{name} heals {heal} HP!");
+            Console.WriteLine($"{name} heals {Math.Round(heal,1)} HP!");
         }
 
     }
