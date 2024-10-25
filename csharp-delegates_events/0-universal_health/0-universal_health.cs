@@ -19,7 +19,7 @@ public class Player {
     /// <summary>
     /// Constructor
     /// </summary>
-    public Player(string name = "Player", float maxHp = 100f) {
+    public Player(string name = "Player", float? maxHp = 100f) {
         this.name = name;
         if (maxHp > 0) {
             this.maxHp = maxHp;
