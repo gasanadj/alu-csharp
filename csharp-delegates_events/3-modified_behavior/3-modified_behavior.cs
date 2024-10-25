@@ -94,7 +94,7 @@ public class Player {
         } else if (mod == Modifier.Base) {
             return baseV;
         } else {
-            return (float)(baseV * 1.5);
+            return baseV * 1.5f;
         }
     }
 
