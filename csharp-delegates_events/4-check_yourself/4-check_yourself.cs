@@ -54,8 +54,8 @@ public class Player {
             Console.WriteLine($"{name} takes 0 damage!");
         } else {
             float newHp = hp - damage;
-            ValidateHP(newHp);
             Console.WriteLine($"{name} takes {damage} damage!");
+            ValidateHP(newHp);
         }
         
     }
@@ -68,8 +68,8 @@ public class Player {
             Console.WriteLine($"{name} heals 0 HP!");
         }else {
             float newHp = hp + heal;
-            ValidateHP(newHp);
             Console.WriteLine($"{name} heals {Math.Round(heal,1)} HP!");
+            ValidateHP(newHp);
         }
 
     }
