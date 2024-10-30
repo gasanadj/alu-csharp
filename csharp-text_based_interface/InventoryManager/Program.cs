@@ -49,7 +49,7 @@ public class Program {
                         if (commandParts.Length < 3) Console.WriteLine("Please Specify Class Name and Object ID");
                         else DeleteObject(commandParts[1], commandParts[2]);
                         break;
-                    case "Exit":
+                    case "exit":
                         Console.WriteLine("Exiting Inventory Manager");
                         return;
                     default:
@@ -81,15 +81,20 @@ public class Program {
 
     static void ListClassNames() {
         var classnames = new HashSet<string>();
+        Console.WriteLine("Classes Present");
+        Console.WriteLine("***************************************");
+        Console.WriteLine("- User");
+        Console.WriteLine("- Item");
+        Console.WriteLine("- Inventory");
 
-        foreach (var key in jSONStorage.All().Keys) {
-            string classname = key.Split('.')[0];
-            classnames.Add(classname);
-        }
+        // foreach (var key in jSONStorage.All().Keys) {
+        //     string classname = key.Split('.')[0];
+        //     classnames.Add(classname);
+        // }
 
-        foreach (var name in classnames) {
-            Console.WriteLine(name);
-        }
+        // foreach (var name in classnames) {
+        //     Console.WriteLine(name);
+        // }
     }
 
     static void ShowAll(string classname = null!) {
@@ -102,14 +107,48 @@ public class Program {
 
     static void CreateObject(string className) {
         switch(className.ToLower()) {
-            case "item":
-                Console.Write("Enter name: ");
-                string name = Console.ReadLine()!;
-                var item = new Item(name);
-                jSONStorage.New(item);
-                jSONStorage.Save();
-                Console.WriteLine($"Created new {className} with ID {item.id}");
+        case "item":
+            Console.Write("Enter name: ");
+            string itemName = Console.ReadLine()!;
+            var item = new Item(itemName);
+
+            Console.Write("Enter description (optional): ");
+            string? itemDescription = Console.ReadLine();
+            if (!string.IsNullOrEmpty(itemDescription)) item.Description = itemDescription;
+
+            Console.Write("Enter price (optional): ");
+            if (float.TryParse(Console.ReadLine(), out float itemPrice)) item.Price = itemPrice;
+
+            Console.Write("Enter tags (comma-separated, optional): ");
+            string itemTags = Console.ReadLine()!;
+            if (!string.IsNullOrEmpty(itemTags)) item.Tags = new List<string>(itemTags.Split(','));
+
+            jSONStorage.New(item);
+            jSONStorage.Save();
+            Console.WriteLine($"Created new {className} with ID {item.id}");
+            break;
+            case "user":
+                Console.Write("Enter user name: ");
+                var uname = Console.ReadLine()!;
+                var user = new User(uname);
+                jSONStorage.New(user);
                 break;
+            case "inventory":
+                Console.Write("Enter user id: ");
+                var user_id = Console.ReadLine()!;
+                Console.Write("Enter item id: ");
+                var item_id = Console.ReadLine()!;
+                Console.Write("Enter quantity: ");
+                if (int.TryParse(Console.ReadLine(), out int quantity))
+                    {
+                        var inventory = new Inventory(user_id, item_id, quantity);
+                        jSONStorage.New(inventory);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid quantity.");
+                    }
+                    break;
             
             default:
                 Console.WriteLine($"{className} is not a valid object type.");
