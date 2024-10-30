@@ -12,7 +12,11 @@ namespace InventoryLibrary;
 public class JSONStorage {
 
     private readonly Dictionary<string, object> objects = new Dictionary<string, object>();
-    private const string directory = "storage";
+        private static readonly string directory = Path.Combine(
+            Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.Parent?.Parent?.FullName!, 
+            "InventoryLibrary", 
+            "storage"
+        );
     private const string fileName = "inventory_manager.json";
 
     /// <summary>
@@ -31,14 +35,19 @@ public class JSONStorage {
 
         var className = obj.GetType().Name;
         var idProp = obj.GetType().GetProperty("id");
-        if (idProp == null) throw new InvalidOperationException("Object Must Have an ID");
+        var idValue = idProp?.GetValue(obj)?.ToString();
+    
+        if (string.IsNullOrEmpty(idValue)) {
+            var idField = obj.GetType().GetField("id");
+            idValue = idField?.GetValue(obj)?.ToString();
+        }
 
-        var idValue = idProp.GetValue(obj)?.ToString();
-        if (string.IsNullOrEmpty(idValue)) throw new InvalidOperationException("ID must have a value");
+        if (string.IsNullOrEmpty(idValue)) throw new InvalidOperationException("Object must have an ID");
 
         string key = $"{className}.{idValue}";
         objects[key] = obj;
     }
+
 
     /// <summary>
     /// Method to save the serialized data to a json file
