@@ -13,11 +13,10 @@ public class JSONStorage {
 
     private readonly Dictionary<string, object> objects = new Dictionary<string, object>();
         private static readonly string directory = Path.Combine(
-            Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.Parent?.Parent?.FullName!, 
-            "InventoryLibrary", 
-            "storage"
+            AppDomain.CurrentDomain.BaseDirectory, "InventoryLibrary", "storage"
         );
-    private const string fileName = "inventory_manager.json";
+        
+        private const string fileName = "inventory_manager.json";
 
     /// <summary>
     /// Returns the objects dictionary
@@ -62,6 +61,19 @@ public class JSONStorage {
         File.WriteAllText(filePath, json);
     }
     
+
+    /// <summary>
+    /// Overloaded Save method to save a specific object to the in-memory collection and file.
+    /// </summary>
+    /// <param name="obj">The object to save or update.</param>
+    /// <param name="key">The unique key associated with the object.</param>
+    public void Save(object obj, string key) {
+        // Update the in-memory collection with the specific object
+        objects[key] = obj;
+
+        // Call the general Save method to write all objects to the file
+        Save();
+    }
     /// <summary>
     /// Method to Load i.e Deserialize Data to objects
     /// </summary>
