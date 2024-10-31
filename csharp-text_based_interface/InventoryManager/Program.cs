@@ -133,22 +133,10 @@ public class Program {
                 var uname = Console.ReadLine()!;
                 var user = new User(uname);
                 jSONStorage.New(user);
+                jSONStorage.Save();
                 break;
             case "inventory":
-                Console.Write("Enter user id: ");
-                var user_id = Console.ReadLine()!;
-                Console.Write("Enter item id: ");
-                var item_id = Console.ReadLine()!;
-                Console.Write("Enter quantity: ");
-                if (int.TryParse(Console.ReadLine(), out int quantity))
-                    {
-                        var inventory = new Inventory(user_id, item_id, quantity);
-                        jSONStorage.New(inventory);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid quantity.");
-                    }
+                    CreateInventory();
                     break;
             
             default:
@@ -220,6 +208,7 @@ public class Program {
 
                     case "Inventory":
                         var inventory = JsonSerializer.Deserialize<Inventory>(jsonElement.GetRawText());
+                        Console.WriteLine(inventory);
                         if (inventory != null)
                         {
                             Console.Write("Enter new inventory quantity (leave blank to skip): ");
@@ -237,6 +226,7 @@ public class Program {
             }
             else
             {
+                Console.WriteLine(obj.GetType());
                 Console.WriteLine($"Object {id} could not be deserialized.");
             }
         }
@@ -385,5 +375,47 @@ public class Program {
             Console.WriteLine($"Object {id} could not be found");
         }
     }
+
+        private static void CreateInventory()
+    {
+        Console.Write("Enter user id: ");
+        var userId = Console.ReadLine()!;
+        if (!UserExists(userId))
+        {
+            Console.WriteLine("Error: User ID does not exist.");
+            return;
+        }
+
+        Console.Write("Enter item id: ");
+        var itemId = Console.ReadLine()!;
+        if (!ItemExists(itemId))
+        {
+            Console.WriteLine("Error: Item ID does not exist.");
+            return;
+        }
+
+        Console.Write("Enter quantity: ");
+        if (!int.TryParse(Console.ReadLine(), out int quantity) || quantity < 0)
+        {
+            Console.WriteLine("Error: Quantity must be a non-negative integer.");
+            return;
+        }
+        var newInventory = new Inventory(userId, itemId, quantity);
+        jSONStorage.New(newInventory);
+        jSONStorage.Save();
+    }
+
+    // Method to check if a user exists
+    private static bool UserExists(string userId)
+    {
+        return jSONStorage.All().ContainsKey($"User.{userId}");
+    }
+
+    // Method to check if an item exists
+    private static bool ItemExists(string itemId)
+    {
+        return jSONStorage.All().ContainsKey($"Item.{itemId}");
+    }
+
 
 }

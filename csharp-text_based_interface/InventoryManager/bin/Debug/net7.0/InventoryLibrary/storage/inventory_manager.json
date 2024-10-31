@@ -7,5 +7,13 @@
       "shoes",
       " beauty"
     ]
+  },
+  "User.58c626e9-a533-46b8-b76b-34562f057a53": {
+    "Name": "Gasana"
+  },
+  "Inventory.0fc321a8-52f1-4ec9-b319-ceb59ad36e9d": {
+    "UserId": "58c626e9-a533-46b8-b76b-34562f057a53",
+    "ItemId": "37af97e0-83aa-4526-9113-4afd0f790fd8",
+    "Quantity": 120
   }
 }

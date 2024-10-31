@@ -22,7 +22,7 @@ public class Inventory: BaseClass {
             if (value < 0) {
                 throw new ArgumentOutOfRangeException("Quantity can't be negative");
             }
-            _quantity = 0;
+            _quantity = value;
         }
     }
     /// <summary>
@@ -36,4 +36,13 @@ public class Inventory: BaseClass {
         ItemId = iid;
         Quantity = qty;
     }
+
+    /// <summary>
+    /// Default constructor for serialization
+    /// </summary>
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
+    public Inventory() { 
+        
+    }
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
 }

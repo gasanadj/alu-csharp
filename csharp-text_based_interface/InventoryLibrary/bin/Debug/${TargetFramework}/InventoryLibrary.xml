@@ -57,6 +57,11 @@
             <param name="iid"></param>
             <param name="qty"></param>
         </member>
+        <member name="M:InventoryLibrary.Inventory.#ctor">
+            <summary>
+            Default constructor for serialization
+            </summary>
+        </member>
         <member name="T:InventoryLibrary.Item">
             <summary>
             Item Class
