@@ -1,8 +1,11 @@
 {
-  "Item.0d4600cc-d2c0-40a4-8588-39bec55011f0": {
-    "Name": "Shoes",
-    "Description": null,
-    "Price": null,
-    "Tags": []
+  "Item.37af97e0-83aa-4526-9113-4afd0f790fd8": {
+    "Name": "Kicks",
+    "Description": "Jordan Air 1",
+    "Price": 20,
+    "Tags": [
+      "shoes",
+      " beauty"
+    ]
   }
 }

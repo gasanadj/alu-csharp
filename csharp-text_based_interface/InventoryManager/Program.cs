@@ -3,6 +3,7 @@ using InventoryLibrary;
 using System.Collections.Generic;
 using System.Text.Json.Nodes;
 using System.Runtime.InteropServices;
+using System.Text.Json;
 
 namespace InventoryManager;
 
@@ -156,77 +157,88 @@ public class Program {
         }
     }
 
-    static void ShowObject(string classname, string id) {
-        string key = $"{classname}.{id}";
-        if (jSONStorage.All().TryGetValue(key, out var obj)) {
-            Console.WriteLine($"{key}: {obj}");
-        } else {
+
+    static void ShowObject(string classname, string id) 
+    {
+        string capitalizedClassName = char.ToUpper(classname[0]) + classname[1..];
+        string key = $"{capitalizedClassName}.{id}";
+
+        if (jSONStorage.All().TryGetValue(key, out var obj)) 
+        {
+            string json = JsonSerializer.Serialize(obj, new JsonSerializerOptions { WriteIndented = true });
+            Console.WriteLine($"{key}: {json}");
+        } 
+        else 
+        {
             Console.WriteLine($"Object {id} could not be found");
         }
     }
 
+
     static void UpdateObject(string className, string id)
     {
-        string key = $"{className}.{id}";
+        // Capitalize the first letter of className to match stored format
+        string capitalizedClassName = char.ToUpper(className[0]) + className[1..];
+        string key = $"{capitalizedClassName}.{id}";
+
+        Console.WriteLine($"Looking for key: {key}");
+
         if (jSONStorage.All().TryGetValue(key, out var obj))
         {
-            switch (obj)
+            if (obj is JsonElement jsonElement)
             {
-                case Item item:
-                    // Update Item-specific properties
-                    Console.Write("Enter new description (leave blank to skip): ");
-                    string description = Console.ReadLine()!;
-                    if (!string.IsNullOrEmpty(description)) item.Description = description;
+                switch (capitalizedClassName)
+                {
+                    case "Item":
+                        var item = JsonSerializer.Deserialize<Item>(jsonElement.GetRawText());
+                        if (item != null)
+                        {
+                            Console.Write("Enter new description (leave blank to skip): ");
+                            string description = Console.ReadLine()!;
+                            if (!string.IsNullOrEmpty(description)) item.Description = description;
 
-                    Console.Write("Enter new price (leave blank to skip): ");
-                    if (float.TryParse(Console.ReadLine(), out float price)) item.Price = price;
+                            Console.Write("Enter new price (leave blank to skip): ");
+                            if (float.TryParse(Console.ReadLine(), out float price)) item.Price = price;
 
-                    Console.Write("Enter new tags (comma-separated, leave blank to skip): ");
-                    string tags = Console.ReadLine()!;
-                    if (!string.IsNullOrEmpty(tags)) item.Tags = new List<string>(tags.Split(','));
+                            jSONStorage.Save(item,key);
+                            Console.WriteLine($"{capitalizedClassName} {id} updated.");
+                        }
+                        break;
 
-                    Console.WriteLine($"{className} {id} updated.");
-                    break;
+                    case "User":
+                        var user = JsonSerializer.Deserialize<User>(jsonElement.GetRawText());
+                        if (user != null)
+                        {
+                            Console.Write("Enter new user name (leave blank to skip): ");
+                            string newName = Console.ReadLine()!;
+                            if (!string.IsNullOrEmpty(newName)) user.Name = newName;
 
-                case Inventory inventory:
-                    // Update Inventory-specific properties
-                    Console.Write("Enter new UserId (leave blank to skip): ");
-                    string userId = Console.ReadLine()!;
-                    if (!string.IsNullOrEmpty(userId)) inventory.UserId = userId;
+                            jSONStorage.Save(user, key);
+                            Console.WriteLine($"{capitalizedClassName} {id} updated.");
+                        }
+                        break;
 
-                    Console.Write("Enter new ItemId (leave blank to skip): ");
-                    string itemId = Console.ReadLine()!;
-                    if (!string.IsNullOrEmpty(itemId)) inventory.ItemId = itemId;
+                    case "Inventory":
+                        var inventory = JsonSerializer.Deserialize<Inventory>(jsonElement.GetRawText());
+                        if (inventory != null)
+                        {
+                            Console.Write("Enter new inventory quantity (leave blank to skip): ");
+                            if (int.TryParse(Console.ReadLine(), out int quantity)) inventory.Quantity = quantity;
 
-                    Console.Write("Enter new Quantity (leave blank to skip): ");
-                    if (int.TryParse(Console.ReadLine(), out int quantity) && quantity >= 0)
-                    {
-                        inventory.Quantity = quantity;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid quantity. Quantity must be 0 or more.");
-                    }
+                            jSONStorage.Save(inventory, key);
+                            Console.WriteLine($"{capitalizedClassName} {id} updated.");
+                        }
+                        break;
 
-                    Console.WriteLine($"{className} {id} updated.");
-                    break;
-
-                case User user:
-                    // Update User-specific properties
-                    Console.Write("Enter new username (leave blank to skip): ");
-                    string username = Console.ReadLine()!;
-                    if (!string.IsNullOrEmpty(username)) user.Name = username;
-
-                    Console.WriteLine($"{className} {id} updated.");
-                    break;
-
-                default:
-                    Console.WriteLine($"{className} {id} is not updatable.");
-                    break;
+                    default:
+                        Console.WriteLine($"{capitalizedClassName} {id} is not updatable.");
+                        break;
+                }
             }
-
-            // Save changes to storage
-            jSONStorage.Save();
+            else
+            {
+                Console.WriteLine($"Object {id} could not be deserialized.");
+            }
         }
         else
         {
@@ -234,8 +246,137 @@ public class Program {
         }
     }
 
+
+// static void UpdateObject(string className, string id)
+// {
+//     // Capitalize the first letter of className to match stored format
+//     string capitalizedClassName = char.ToUpper(className[0]) + className.Substring(1);
+//     string key = $"{capitalizedClassName}.{id}";
+
+//     Console.WriteLine($"Looking for key: {key}");
+
+//     if (jSONStorage.All().TryGetValue(key, out var obj))
+//     {
+//         Console.WriteLine(obj.GetType());
+//         if (obj is Item item)
+//         {
+//             Console.Write("Enter new description (leave blank to skip): ");
+//             string description = Console.ReadLine()!;
+//             if (!string.IsNullOrEmpty(description)) item.Description = description;
+
+//             Console.Write("Enter new price (leave blank to skip): ");
+//             if (float.TryParse(Console.ReadLine(), out float price)) item.Price = price;
+
+//             jSONStorage.Save();
+//             Console.WriteLine($"{capitalizedClassName} {id} updated.");
+//         }
+//         else if (obj is User user)
+//         {
+//             // Handle User-specific updates
+//             Console.Write("Enter new user name (leave blank to skip): ");
+//             string newName = Console.ReadLine()!;
+//             if (!string.IsNullOrEmpty(newName)) user.Name = newName;
+
+//             jSONStorage.Save();
+//             Console.WriteLine($"{capitalizedClassName} {id} updated.");
+//         }
+//         else if (obj is Inventory inventory)
+//         {
+//             // Handle Inventory-specific updates
+//             Console.Write("Enter new inventory quantity (leave blank to skip): ");
+//             if (int.TryParse(Console.ReadLine(), out int quantity)) inventory.Quantity = quantity;
+
+//             jSONStorage.Save();
+//             Console.WriteLine($"{capitalizedClassName} {id} updated.");
+//         }
+//         else
+//         {
+//             Console.WriteLine($"{capitalizedClassName} {id} is not updatable.");
+//         }
+//     }
+//     else
+//     {
+//         Console.WriteLine($"Object {id} could not be found.");
+//     }
+// }
+
+
+
+    // static void UpdateObject(string className, string id)
+    // {
+    //     string capitalizedClassName = char.ToUpper(className[0]) + className[1..];
+    //     string key = $"{capitalizedClassName}.{id}";
+    //     Console.WriteLine($"Looking for key: {key}");
+    //     if (jSONStorage.All().TryGetValue(key, out var obj))
+    //     {
+    //         switch (obj)
+    //         {
+    //             case Item item:
+    //                 // Update Item-specific properties
+    //                 Console.Write("Enter new description (leave blank to skip): ");
+    //                 string description = Console.ReadLine()!;
+    //                 if (!string.IsNullOrEmpty(description)) item.Description = description;
+
+    //                 Console.Write("Enter new price (leave blank to skip): ");
+    //                 if (float.TryParse(Console.ReadLine(), out float price)) item.Price = price;
+
+    //                 Console.Write("Enter new tags (comma-separated, leave blank to skip): ");
+    //                 string tags = Console.ReadLine()!;
+    //                 if (!string.IsNullOrEmpty(tags)) item.Tags = new List<string>(tags.Split(','));
+
+    //                 Console.WriteLine($"{className} {id} updated.");
+    //                 break;
+
+    //             case Inventory inventory:
+    //                 // Update Inventory-specific properties
+    //                 Console.Write("Enter new UserId (leave blank to skip): ");
+    //                 string userId = Console.ReadLine()!;
+    //                 if (!string.IsNullOrEmpty(userId)) inventory.UserId = userId;
+
+    //                 Console.Write("Enter new ItemId (leave blank to skip): ");
+    //                 string itemId = Console.ReadLine()!;
+    //                 if (!string.IsNullOrEmpty(itemId)) inventory.ItemId = itemId;
+
+    //                 Console.Write("Enter new Quantity (leave blank to skip): ");
+    //                 if (int.TryParse(Console.ReadLine(), out int quantity) && quantity >= 0)
+    //                 {
+    //                     inventory.Quantity = quantity;
+    //                 }
+    //                 else
+    //                 {
+    //                     Console.WriteLine("Invalid quantity. Quantity must be 0 or more.");
+    //                 }
+
+    //                 Console.WriteLine($"{className} {id} updated.");
+    //                 break;
+
+    //             case User user:
+    //                 // Update User-specific properties
+    //                 Console.Write("Enter new username (leave blank to skip): ");
+    //                 string username = Console.ReadLine()!;
+    //                 if (!string.IsNullOrEmpty(username)) user.Name = username;
+
+    //                 Console.WriteLine($"{className} {id} updated.");
+    //                 break;
+
+    //             default:
+    //                 Console.WriteLine($"{className} {id} is not updatable.");
+    //                 break;
+    //         }
+
+    //         // Save changes to storage
+    //         jSONStorage.Save();
+    //     }
+    //     else
+    //     {
+    //         Console.WriteLine($"Object {id} could not be found.");
+    //     }
+    // }
+
     static void DeleteObject(string classname, string id) {
-        string key = $"{classname}.{id}";
+        // Capitalize the first letter of className to match stored format
+        string capitalizedClassName = char.ToUpper(classname[0]) + classname[1..];
+        string key = $"{capitalizedClassName}.{id}";
         
         if (jSONStorage.All().Remove(key)) {
             jSONStorage.Save();

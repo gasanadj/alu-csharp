@@ -115,6 +115,13 @@
             Method to save the serialized data to a json file
             </summary>
         </member>
+        <member name="M:InventoryLibrary.JSONStorage.Save(System.Object,System.String)">
+            <summary>
+            Overloaded Save method to save a specific object to the in-memory collection and file.
+            </summary>
+            <param name="obj">The object to save or update.</param>
+            <param name="key">The unique key associated with the object.</param>
+        </member>
         <member name="M:InventoryLibrary.JSONStorage.Load">
             <summary>
             Method to Load i.e Deserialize Data to objects
