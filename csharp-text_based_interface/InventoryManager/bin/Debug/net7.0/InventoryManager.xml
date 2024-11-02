@@ -9,5 +9,64 @@
             The main entry to the program
             </summary>
         </member>
+        <member name="F:InventoryManager.Program.jSONStorage">
+            <summary>
+            Json stoage Instance
+            </summary>
+        </member>
+        <member name="M:InventoryManager.Program.PrintCommands">
+            <summary>
+            Method to print the commands for the CLI
+            </summary>
+        </member>
+        <member name="M:InventoryManager.Program.ListClassNames">
+            <summary>
+            Method to List the names of the available classes
+            </summary>
+        </member>
+        <member name="M:InventoryManager.Program.ShowAll(System.String)">
+            <summary>
+            Method to show all Items in the inventory
+            </summary>
+            <param name="classname"></param>
+        </member>
+        <member name="M:InventoryManager.Program.CreateObject(System.String)">
+            <summary>
+            Method to create an object of a given class
+            </summary>
+            <param name="className"></param>
+        </member>
+        <member name="M:InventoryManager.Program.ShowObject(System.String,System.String)">
+            <summary>
+            Method to show a particular object from a given class with it's ID
+            </summary>
+            <param name="classname"></param>
+            <param name="id"></param>
+        </member>
+        <member name="M:InventoryManager.Program.UpdateObject(System.String,System.String)">
+            <summary>
+            Method to Update a given object
+            </summary>
+            <param name="className"></param>
+            <param name="id"></param>
+        </member>
+        <member name="M:InventoryManager.Program.DeleteObject(System.String,System.String)">
+            <summary>
+            Method to Delete an Item from inventory
+            </summary>
+            <param name="classname"></param>
+            <param name="id"></param>
+        </member>
+        <member name="M:InventoryManager.Program.CreateInventory">
+            <summary>
+            Method to create inventory
+            </summary>
+        </member>
+        <member name="M:InventoryManager.Program.PrintTestMessage">
+            <summary>
+            Testing tests
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>

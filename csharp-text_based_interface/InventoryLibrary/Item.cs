@@ -29,6 +29,10 @@ namespace InventoryLibrary
             get => _price;
             set
             {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("Price cannot be negative.");
+                }
                 if (value.HasValue)
                 {
                     _price = (float)Math.Round(value.Value, 2); 
@@ -51,6 +55,10 @@ namespace InventoryLibrary
         /// <param name="name">The name of the item</param>
         public Item(string name)
         {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentException("Item name cannot be empty.");
+            }
             Name = name; // Required property initialized
         }
     }

@@ -32,6 +32,10 @@ public class Inventory: BaseClass {
     /// <param name="iid"></param>
     /// <param name="qty"></param>
     public Inventory(string uid, string iid, int qty) {
+        if (qty < 0)
+        {
+            throw new ArgumentOutOfRangeException("Quantity can't be negative");
+        }
         UserId = uid;
         ItemId = iid;
         Quantity = qty;

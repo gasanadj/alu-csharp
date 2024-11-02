@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InventoryLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:InventoryLibrary.BaseClass">
+            <summary>
+            The BaseClass
+            </summary>
+        </member>
+        <member name="F:InventoryLibrary.BaseClass.id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="F:InventoryLibrary.BaseClass.date_created">
+            <summary>
+            The Date Created
+            </summary>
+        </member>
+        <member name="F:InventoryLibrary.BaseClass.date_updated">
+            <summary>
+            The date Updated
+            </summary>
+        </member>
+        <member name="M:InventoryLibrary.BaseClass.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:InventoryLibrary.Inventory">
+            <summary>
+            The Inventory class
+            </summary>
+        </member>
+        <member name="P:InventoryLibrary.Inventory.UserId">
+            <summary>
+            UserId
+            </summary>
+        </member>
+        <member name="P:InventoryLibrary.Inventory.ItemId">
+            <summary>
+            ItemId
+            </summary>
+        </member>
+        <member name="P:InventoryLibrary.Inventory.Quantity">
+            <summary>
+            Quantity
+            </summary>
+        </member>
+        <member name="M:InventoryLibrary.Inventory.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="uid"></param>
+            <param name="iid"></param>
+            <param name="qty"></param>
+        </member>
+        <member name="M:InventoryLibrary.Inventory.#ctor">
+            <summary>
+            Default constructor for serialization
+            </summary>
+        </member>
+        <member name="T:InventoryLibrary.Item">
+            <summary>
+            Item Class
+            </summary>
+        </member>
+        <member name="P:InventoryLibrary.Item.Name">
+            <summary>
+            Name - required property
+            </summary>
+        </member>
+        <member name="P:InventoryLibrary.Item.Description">
+            <summary>
+            Description - optional property
+            </summary>
+        </member>
+        <member name="F:InventoryLibrary.Item._price">
+            <summary>
+            Price - optional property, limited to 2 decimal points
+            </summary>
+        </member>
+        <member name="P:InventoryLibrary.Item.Price">
+            <summary>
+            Price Property
+            </summary>
+        </member>
+        <member name="P:InventoryLibrary.Item.Tags">
+            <summary>
+            Tags - optional property
+            </summary>
+        </member>
+        <member name="M:InventoryLibrary.Item.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">The name of the item</param>
+        </member>
+        <member name="T:InventoryLibrary.JSONStorage">
+            <summary>
+            JSON Storage class for storing data
+            </summary>
+        </member>
+        <member name="M:InventoryLibrary.JSONStorage.All">
+            <summary>
+            Returns the objects dictionary
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InventoryLibrary.JSONStorage.New(System.Object)">
+            <summary>
+            Method to add an object to dictionary
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:InventoryLibrary.JSONStorage.Save">
+            <summary>
+            Method to save the serialized data to a json file
+            </summary>
+        </member>
+        <member name="M:InventoryLibrary.JSONStorage.Save(System.Object,System.String)">
+            <summary>
+            Overloaded Save method to save a specific object to the in-memory collection and file.
+            </summary>
+            <param name="obj">The object to save or update.</param>
+            <param name="key">The unique key associated with the object.</param>
+        </member>
+        <member name="M:InventoryLibrary.JSONStorage.Load">
+            <summary>
+            Method to Load i.e Deserialize Data to objects
+            </summary>
+        </member>
+        <member name="T:InventoryLibrary.User">
+            <summary>
+            User Class
+            </summary>
+        </member>
+        <member name="P:InventoryLibrary.User.Name">
+            <summary>
+            Name Property
+            </summary>
+        </member>
+        <member name="M:InventoryLibrary.User.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name"></param>
+        </member>
+    </members>
+</doc>

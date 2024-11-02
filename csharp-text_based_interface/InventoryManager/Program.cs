@@ -11,7 +11,10 @@ namespace InventoryManager;
 /// The main entry to the program
 /// </summary>
 public class Program {
-    static JSONStorage jSONStorage = new();
+    /// <summary>
+    /// Json stoage Instance
+    /// </summary>
+    public static JSONStorage jSONStorage = new();
     static void Main(string[] args) {
         jSONStorage.Load();
         Console.WriteLine("Inventory Manager\n-------------------------");
@@ -68,7 +71,10 @@ public class Program {
         }
     } 
 
-    static void PrintCommands() {
+    /// <summary>
+    /// Method to print the commands for the CLI
+    /// </summary>
+    public static void PrintCommands() {
         Console.WriteLine("\nAvailable Commands:");
         Console.WriteLine("<ClassNames> show all ClassNames of objects");
         Console.WriteLine("<All> show all objects");
@@ -80,7 +86,10 @@ public class Program {
         Console.WriteLine("<Exit>");
     }
 
-    static void ListClassNames() {
+    /// <summary>
+    /// Method to List the names of the available classes
+    /// </summary>
+    public static void ListClassNames() {
         var classnames = new HashSet<string>();
         Console.WriteLine("Classes Present");
         Console.WriteLine("***************************************");
@@ -97,16 +106,27 @@ public class Program {
         //     Console.WriteLine(name);
         // }
     }
+    /// <summary>
+    /// Method to show all Items in the inventory
+    /// </summary>
+    /// <param name="classname"></param>
 
-    static void ShowAll(string classname = null!) {
-        foreach (var entry in jSONStorage.All()) {
+    public static void ShowAll(string classname = null!) {
+        if (jSONStorage.All().Count > 0) {
+            foreach (var entry in jSONStorage.All()) {
             if (classname == null || entry.Key.StartsWith(classname, StringComparison.OrdinalIgnoreCase)) {
                 Console.WriteLine($"{entry.Key}: {entry.Value}");
             }
         }
+        } else {
+            Console.WriteLine("Our Inventory is Currently Empty");
+        }
     }
-
-    static void CreateObject(string className) {
+    /// <summary>
+    /// Method to create an object of a given class
+    /// </summary>
+    /// <param name="className"></param>
+    public static void CreateObject(string className) {
         switch(className.ToLower()) {
         case "item":
             Console.Write("Enter name: ");
@@ -145,8 +165,12 @@ public class Program {
         }
     }
 
-
-    static void ShowObject(string classname, string id) 
+    /// <summary>
+    /// Method to show a particular object from a given class with it's ID
+    /// </summary>
+    /// <param name="classname"></param>
+    /// <param name="id"></param>
+    public static void ShowObject(string classname, string id) 
     {
         string capitalizedClassName = char.ToUpper(classname[0]) + classname[1..];
         string key = $"{capitalizedClassName}.{id}";
@@ -162,8 +186,12 @@ public class Program {
         }
     }
 
-
-    static void UpdateObject(string className, string id)
+    /// <summary>
+    /// Method to Update a given object
+    /// </summary>
+    /// <param name="className"></param>
+    /// <param name="id"></param>
+    public static void UpdateObject(string className, string id)
     {
         // Capitalize the first letter of className to match stored format
         string capitalizedClassName = char.ToUpper(className[0]) + className[1..];
@@ -363,7 +391,12 @@ public class Program {
     //     }
     // }
 
-    static void DeleteObject(string classname, string id) {
+    /// <summary>
+    /// Method to Delete an Item from inventory
+    /// </summary>
+    /// <param name="classname"></param>
+    /// <param name="id"></param>
+    public static void DeleteObject(string classname, string id) {
         // Capitalize the first letter of className to match stored format
         string capitalizedClassName = char.ToUpper(classname[0]) + classname[1..];
         string key = $"{capitalizedClassName}.{id}";
@@ -375,7 +408,9 @@ public class Program {
             Console.WriteLine($"Object {id} could not be found");
         }
     }
-
+    /// <summary>
+    /// Method to create inventory
+    /// </summary>
         private static void CreateInventory()
     {
         Console.Write("Enter user id: ");
@@ -416,6 +451,12 @@ public class Program {
     {
         return jSONStorage.All().ContainsKey($"Item.{itemId}");
     }
-
+    /// <summary>
+    /// Testing tests
+    /// </summary>
+    /// <returns></returns>
+    public string PrintTestMessage() {
+        return "Hello World";
+    }
 
 }
