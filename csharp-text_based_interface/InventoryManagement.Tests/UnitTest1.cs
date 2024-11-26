@@ -8,6 +8,8 @@ namespace InventoryManager.Tests
     [TestFixture]
     public class InventoryTests
     {
+    
+    
         [Test]
         public void CreateObject_Should_Create_A_User_With_Specified_Name()
         {
